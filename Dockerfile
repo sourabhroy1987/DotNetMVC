@@ -6,7 +6,7 @@ COPY dotnetmvc.csproj .
 RUN dotnet restore
 
 COPY . .
-RUN dotnet publish -o /publish
+RUN dotnet publish -o /publish -r linux-x64
 
 # Runtime Image Stage
 FROM microsoft/dotnet:2.1-aspnetcore-runtime
