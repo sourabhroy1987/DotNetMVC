@@ -1,0 +1,12 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: my-dotnetmvc-ingress
+  namespace: dotnetmvc
+  annotations:
+    # kubernetes.io/tls-acme: "true"
+    #kubernetes.io/ingress.class: "gce"
+spec:
+  backend:
+    serviceName: my-dotnetmvc-svc
+    servicePort: my-http-port

@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: my-dotnetmvc-deploy
+  namespace: dotnetmvc
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: dotnetmvc
+    spec:
+      containers:
+      - image: sourabhroy/dotnetmvc
+        imagePullPolicy: Always
+        name: dotnetmvc
+        ports:
+        - containerPort: 80
